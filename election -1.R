@@ -54,12 +54,11 @@ ggplot(elections, aes(x = Vote.for.Highest.Office..President., y = VEP.Turnout.R
 #b)
 elections$VEP.Turnout.Rate <- as.numeric(gsub("%", "", elections$VEP.Turnout.Rate))
 
-# Create the histogram with density overlay and title
 ggplot(elections, aes(x = VEP.Turnout.Rate)) +
-  geom_histogram(aes(y = ..density..), bins = 30, fill = "skyblue", color = "black") +  # Histogram plot
-  geom_density(color = "red") +  # Density curve
+  geom_histogram(aes(y = ..density..), bins = 30, fill = "skyblue", color = "black") + 
+  geom_density(color = "red") + 
   labs(
-    title = "Distribution of VEP Turnout Rate Across States in the 2020 U.S. Election",  # Added title
+    title = "Distribution of VEP Turnout Rate Across States in the 2020 U.S. Election",  
     x = "VEP Turnout Rate (%)",
     y = "Density"
   ) +
