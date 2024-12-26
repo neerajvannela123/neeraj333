@@ -52,7 +52,6 @@ ggplot(elections, aes(x = Vote.for.Highest.Office..President., y = VEP.Turnout.R
 
 
 #b)
-# Clean the VEP Turnout Rate column
 elections$VEP.Turnout.Rate <- as.numeric(gsub("%", "", elections$VEP.Turnout.Rate))
 
 # Create the histogram with density overlay and title
